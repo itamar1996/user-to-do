@@ -10,9 +10,7 @@ import jwt from "jsonwebtoken";
 export default class AuthService {
     public static async login(userData:LoginDTO): Promise<ResponseData<SigninResponseDTO|unknown>>{
         try {
-        const { username, password } = userData
-        console.log("name",password);
-        
+        const { username, password } = userData        
         if(!password||!username)
             {
                 return {
@@ -62,5 +60,7 @@ export default class AuthService {
               };
         }
     }
-
-}
+    public static async logout(userData:LoginDTO):Promise<void>{
+        
+    }
+ }
