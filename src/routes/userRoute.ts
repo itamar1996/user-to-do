@@ -14,3 +14,14 @@ export const handleSignUp = async (
     }
 };
 
+export const handleProfileRequest = (req: Request, res: Response):void => {
+    const result = {
+      err: false,
+      // @ts-ignore
+      data: UserService.getUserById(req.user.id),
+      status: 200,
+    };
+    res.json(result);
+  };
+
+
